@@ -1,0 +1,16 @@
+﻿@using OreLavorateLib.Model
+
+<div class="row">
+    <label class="col-6">Username</label>
+    <input class="col-6" @bind="@Utente.Username" />
+</div>
+<div class="row">
+    <label class="col-6">Password</label>
+    <input class="col-6" type="password" @bind="@Utente.Password" />
+</div>
+
+@code {
+    [Parameter]
+    public Utente Utente { get; set; }
+
+}

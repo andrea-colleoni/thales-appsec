@@ -1,0 +1,42 @@
+﻿@page
+@model AspnetRazorPages.Pages.PersonaPages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Persona[0].Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Persona[0].Cognome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Persona) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cognome)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Email">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Email">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Email">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

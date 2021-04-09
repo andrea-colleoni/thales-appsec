@@ -1,0 +1,54 @@
+﻿@page "/utenti"
+@inject OreLavorateLib.Services.IUtenteService service;
+
+<h3>Utenti</h3>
+
+@if (ListUtenti == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Username
+                </th>
+                <th>
+                    Password
+                </th>
+                <th>Azioni</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var utente in ListUtenti)
+            {
+            <tr>
+                <td>
+                    @utente.Username
+                </td>
+                <td>
+                    @utente.Password
+                </td>
+                <td>
+                    <a class="btn btn-secondary" href="/modificaUtente/@utente.Username">Modifica</a>
+                    <a class="btn btn-secondary" href="/eliminaUtente/@utente.Username">Elimina</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+<p>
+    <a href="/nuovoUtente">Nuovo utente</a>
+</p>
+
+@code {
+    public List<OreLavorateLib.Model.Utente> ListUtenti { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        ListUtenti = await service.all();
+    }
+}

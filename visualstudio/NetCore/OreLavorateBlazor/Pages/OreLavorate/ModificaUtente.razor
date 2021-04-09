@@ -1,0 +1,33 @@
+﻿@page "/modificaUtente/{username}"
+
+@using OreLavorateLib.Model
+@using OreLavorateLib.Services
+
+@inject IUtenteService service
+@inject NavigationManager NavigationManager
+
+<h3>Modifica utente</h3>
+
+<FormUtente Utente="@Utente" />
+
+<div class="row">
+    <div class="btn btn-primary" @onclick="@SaveUtente">Aggiorna</div>
+</div>
+
+@code {
+    [Parameter]
+    public string username { get; set; }
+
+    Utente Utente = new Utente();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Utente = await service.byUsername(username);
+    }
+
+    protected async Task SaveUtente()
+    {
+        await service.save(Utente);
+        NavigationManager.NavigateTo("utenti");
+    }
+}

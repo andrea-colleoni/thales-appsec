@@ -1,0 +1,25 @@
+﻿@page "/nuovoUtente"
+
+@using OreLavorateLib.Model
+@using OreLavorateLib.Services
+
+@inject IUtenteService service
+@inject NavigationManager NavigationManager
+
+<h3>Nuovo utente</h3>
+
+<FormUtente Utente="@Utente" />
+
+<div class="row">
+    <div class="btn btn-primary" @onclick="@AddUtente">Salva</div>
+</div>
+
+@code {
+    Utente Utente = new Utente();
+
+    protected async Task AddUtente()
+    {
+        await service.save(Utente);
+        NavigationManager.NavigateTo("utenti");
+    }
+}

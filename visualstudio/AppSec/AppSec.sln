@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSecWin", "AppSecWin\AppS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSecWeb", "AppSecWeb\AppSecWeb.csproj", "{8F07A568-BFB4-4C5F-B4A2-6C6CF94C2A32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSecNetCore", "AppSecNetCore\AppSecNetCore.csproj", "{CBF6122F-03AE-4E30-87D1-2CF8B48B569E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppSecNetCore", "AppSecNetCore\AppSecNetCore.csproj", "{CBF6122F-03AE-4E30-87D1-2CF8B48B569E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppSecDocker", "AppSecDocker\AppSecDocker.csproj", "{FD8BEB0B-8C7A-4124-B332-26802817EC64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CBF6122F-03AE-4E30-87D1-2CF8B48B569E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBF6122F-03AE-4E30-87D1-2CF8B48B569E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBF6122F-03AE-4E30-87D1-2CF8B48B569E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD8BEB0B-8C7A-4124-B332-26802817EC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD8BEB0B-8C7A-4124-B332-26802817EC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD8BEB0B-8C7A-4124-B332-26802817EC64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD8BEB0B-8C7A-4124-B332-26802817EC64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

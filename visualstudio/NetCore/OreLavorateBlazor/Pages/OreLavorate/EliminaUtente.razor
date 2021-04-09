@@ -1,0 +1,29 @@
+﻿@page "/eliminaUtente/{username}"
+
+@using OreLavorateLib.Services
+
+@inject IUtenteService service
+@inject NavigationManager NavigationManager
+
+<h3>Elimina utente</h3>
+
+<p class="alert alert-warning">Sei sicuro di voler cancellare l'utente @username?</p>
+<p>
+    <div class="btn btn-danger" @onclick="@Elimina">Sì</div>
+    <div class="btn btn-primary" @onclick="@Annulla">No</div>
+</p>
+@code {
+    [Parameter]
+    public string username { get; set; }
+
+    protected async Task Elimina()
+    {
+        await service.delete(username);
+        NavigationManager.NavigateTo("/utenti");
+    }
+
+    void Annulla()
+    {
+        NavigationManager.NavigateTo("/utenti");
+    }
+}
